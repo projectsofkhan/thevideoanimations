@@ -1,0 +1,656 @@
+/* style.css - Minecraft Animation - UPDATED CAPTION SIZE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Minecraft', 'Press Start 2P', monospace;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: hidden;
+    color: #fff;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    border: 4px solid #555;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+h1 {
+    color: #55FF55;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 0 #000;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #AAAAFF;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* Scene Container */
+.scene-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to bottom, #7EC0EE 60%, #8B7355 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+    border: 8px solid #555;
+    image-rendering: pixelated;
+}
+
+/* Sky and Background */
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #7EC0EE, #4A90E2);
+}
+
+.sun {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #FFD700;
+    border-radius: 50%;
+    top: 30px;
+    right: 60px;
+    box-shadow: 0 0 30px #FFA500;
+}
+
+.cloud {
+    position: absolute;
+    background: #FFF;
+    border-radius: 20px;
+    opacity: 0.9;
+    image-rendering: pixelated;
+}
+
+.cloud-1 {
+    width: 100px;
+    height: 40px;
+    top: 80px;
+    left: -150px;
+    animation: cloudMove 40s linear infinite;
+}
+
+.cloud-2 {
+    width: 120px;
+    height: 50px;
+    top: 120px;
+    left: -200px;
+    animation: cloudMove 50s linear infinite 10s;
+}
+
+@keyframes cloudMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(1200px); }
+}
+
+/* Ground */
+.ground {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    left: 0;
+}
+
+.grass-layer {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 40px;
+    background: #7CFC00;
+    border-top: 4px solid #228B22;
+}
+
+.dirt-layer {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    background: #8B4513;
+}
+
+/* Blocks */
+.block {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    image-rendering: pixelated;
+}
+
+.grass-block {
+    background: #7CFC00;
+    border-color: #228B22;
+}
+
+.dirt-block {
+    background: #8B4513;
+    border-color: #5D2906;
+}
+
+.stone-block {
+    background: #808080;
+    border-color: #606060;
+}
+
+/* Trees */
+.tree {
+    position: absolute;
+    bottom: 40px;
+}
+
+.tree-trunk {
+    width: 30px;
+    height: 80px;
+    background: #8B4513;
+    border: 2px solid #5D2906;
+    margin: 0 auto;
+}
+
+.tree-leaves {
+    width: 80px;
+    height: 60px;
+    background: #228B22;
+    border: 2px solid #006400;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 5px;
+}
+
+/* Steve Character */
+.steve {
+    position: absolute;
+    bottom: 80px;
+    transition: all 0.3s ease;
+    image-rendering: pixelated;
+}
+
+.good-steve {
+    left: -100px;
+    animation: steveEnter 1.5s forwards 0.5s;
+}
+
+.evil-steve {
+    right: -100px;
+    animation: evilSteveEnter 1.5s forwards 3.5s;
+}
+
+@keyframes steveEnter {
+    0% { left: -100px; }
+    100% { left: 30%; }
+}
+
+@keyframes evilSteveEnter {
+    0% { right: -100px; }
+    100% { right: 30%; }
+}
+
+.steve-head {
+    width: 40px;
+    height: 40px;
+    background: #D4AF37;
+    border: 2px solid #B8860B;
+    margin: 0 auto;
+    position: relative;
+}
+
+.steve-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.steve-eye {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #000;
+    top: 15px;
+}
+
+.left-eye {
+    left: 10px;
+}
+
+.right-eye {
+    right: 10px;
+}
+
+.steve-nose {
+    position: absolute;
+    width: 4px;
+    height: 6px;
+    background: #B8860B;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.steve-mouth {
+    position: absolute;
+    width: 16px;
+    height: 4px;
+    background: #000;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.steve-hair {
+    position: absolute;
+    width: 44px;
+    height: 10px;
+    background: #000;
+    top: -8px;
+    left: -2px;
+    border-radius: 2px;
+}
+
+.steve-body {
+    position: relative;
+    width: 36px;
+    height: 40px;
+    background: #4682B4;
+    border: 2px solid #36648B;
+    margin: 0 auto;
+    margin-top: -2px;
+}
+
+.evil-shirt {
+    background: #8B0000 !important;
+    border-color: #660000 !important;
+}
+
+.steve-arm {
+    position: absolute;
+    width: 12px;
+    height: 30px;
+    background: #D4AF37;
+    border: 2px solid #B8860B;
+    top: 0;
+}
+
+.left-arm {
+    left: -14px;
+    animation: waveArm 2s infinite 5s;
+}
+
+.right-arm {
+    right: -14px;
+}
+
+.steve-hand {
+    position: absolute;
+    width: 12px;
+    height: 10px;
+    background: #D4AF37;
+    border: 2px solid #B8860B;
+    bottom: -10px;
+}
+
+.steve-torso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.steve-legs {
+    position: relative;
+    width: 36px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: -2px;
+}
+
+.steve-leg {
+    position: absolute;
+    width: 12px;
+    height: 30px;
+    background: #4682B4;
+    border: 2px solid #36648B;
+    bottom: 0;
+}
+
+.left-leg {
+    left: 4px;
+}
+
+.right-leg {
+    right: 4px;
+}
+
+.evil-steve .steve-leg {
+    background: #8B0000;
+    border-color: #660000;
+}
+
+/* Animations */
+@keyframes waveArm {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    75% { transform: rotate(20deg); }
+}
+
+@keyframes lookAround {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(20px); }
+    75% { transform: translateX(-20px); }
+}
+
+.look-around {
+    animation: lookAround 3s infinite 2s;
+}
+
+/* Laser Beam */
+.laser-beam {
+    position: absolute;
+    width: 0;
+    height: 6px;
+    background: linear-gradient(to right, #00FFFF, #FF0000);
+    border-radius: 3px;
+    top: 150px;
+    left: 70%;
+    opacity: 0;
+    box-shadow: 0 0 20px #FF0000;
+    z-index: 20;
+}
+
+.laser-fire {
+    animation: laserFire 0.5s forwards 7.5s;
+}
+
+@keyframes laserFire {
+    0% { width: 0; opacity: 0; }
+    50% { opacity: 1; }
+    100% { width: 35%; opacity: 1; }
+}
+
+/* Evil Eye Effect */
+.evil-eye {
+    background: #FFFFFF !important;
+    box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FF0000;
+    animation: evilEyeGlow 0.5s infinite alternate;
+}
+
+@keyframes evilEyeGlow {
+    0% { box-shadow: 0 0 5px #FFFFFF, 0 0 10px #FF0000; }
+    100% { box-shadow: 0 0 15px #FFFFFF, 0 0 30px #FF0000; }
+}
+
+/* Death Animation */
+.death-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 25;
+    opacity: 0;
+}
+
+.death-particle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #FF0000;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 10px #FF0000;
+}
+
+.death-show {
+    opacity: 1;
+}
+
+.death-show .death-particle {
+    animation: deathParticle 1s forwards;
+}
+
+@keyframes deathParticle {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--tx, 0), var(--ty, -100px)) scale(0); opacity: 0; }
+}
+
+/* Story Text - SMALLER CAPTIONS */
+.story-text {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem; /* Reduced from 1.2rem */
+    color: #FFFFFF;
+    box-shadow: 0 0 8px #00FFFF;
+    border: 2px solid #00FFFF;
+    max-width: 85%;
+    opacity: 0;
+    text-shadow: 1px 1px 0 #000;
+    z-index: 30;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+/* Video Controls */
+.video-controls {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin-top: 20px;
+    border: 3px solid #555;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: 'Minecraft', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 140px;
+    border: 2px solid #777;
+    image-rendering: pixelated;
+}
+
+.control-btn:hover {
+    background: #666;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+.control-btn i {
+    font-size: 1.2rem;
+}
+
+.play-btn {
+    background: #55AA55;
+    border-color: #66CC66;
+}
+
+.pause-btn {
+    background: #FFAA00;
+    border-color: #FFCC00;
+}
+
+.reset-btn {
+    background: #AA5555;
+    border-color: #CC6666;
+}
+
+.replay-btn {
+    background: #5555AA;
+    border-color: #6666CC;
+}
+
+.progress-container {
+    width: 100%;
+    background: #333;
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #555;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to right, #55AA55, #55FF55);
+    border-radius: 10px;
+    transition: width 0.1s linear;
+}
+
+.progress-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.timer {
+    font-size: 1.2rem;
+    color: #55FF55;
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* Scene indicators */
+.scene-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.scene-dot {
+    width: 20px;
+    height: 20px;
+    background: #555;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #777;
+    transition: all 0.3s ease;
+}
+
+.scene-dot.active {
+    background: #55FF55;
+    border-color: #AAFFAA;
+    box-shadow: 0 0 10px #55FF55;
+}
+
+.scene-dot:hover .tooltip {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #55FF55;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    border: 1px solid #55FF55;
+    z-index: 40;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    color: #AAA;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.minecraft-text {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 1.5rem; }
+    .subtitle { font-size: 0.9rem; }
+    .scene-container { height: 400px; }
+    .control-buttons { flex-direction: column; align-items: center; }
+    .control-btn { width: 100%; max-width: 300px; }
+    .scene-indicators { gap: 10px; }
+    .scene-dot { width: 15px; height: 15px; }
+    /* Even smaller captions on mobile */
+    .story-text {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+        bottom: 10px;
+    }
+}

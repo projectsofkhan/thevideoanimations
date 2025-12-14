@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Animation: The Betrayal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Minecraft&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cube"></i> MINECRAFT: THE BETRAYAL</h1>
+            <div class="subtitle">A short animated story</div>
+        </header>
+        
+        <div class="scene-container" id="scene-container">
+            <!-- Minecraft-style Background -->
+            <div class="sky">
+                <div class="sun"></div>
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+            </div>
+            
+            <div class="ground">
+                <div class="grass-layer"></div>
+                <div class="dirt-layer"></div>
+                
+                <!-- Blocks -->
+                <div class="block grass-block" style="left: 20%; bottom: 40px;"></div>
+                <div class="block dirt-block" style="left: 25%; bottom: 40px;"></div>
+                <div class="block grass-block" style="left: 30%; bottom: 40px;"></div>
+                <div class="block stone-block" style="left: 70%; bottom: 40px;"></div>
+                <div class="block dirt-block" style="left: 75%; bottom: 40px;"></div>
+                <div class="block grass-block" style="left: 80%; bottom: 40px;"></div>
+                
+                <!-- Trees -->
+                <div class="tree" style="left: 10%;">
+                    <div class="tree-trunk"></div>
+                    <div class="tree-leaves"></div>
+                </div>
+                <div class="tree" style="left: 85%;">
+                    <div class="tree-trunk"></div>
+                    <div class="tree-leaves"></div>
+                </div>
+            </div>
+            
+            <!-- First Steve (Good Steve) -->
+            <div class="steve good-steve" id="good-steve">
+                <div class="steve-head">
+                    <div class="steve-face">
+                        <div class="steve-eye left-eye"></div>
+                        <div class="steve-eye right-eye"></div>
+                        <div class="steve-nose"></div>
+                        <div class="steve-mouth"></div>
+                    </div>
+                    <div class="steve-hair"></div>
+                </div>
+                <div class="steve-body">
+                    <div class="steve-arm left-arm">
+                        <div class="steve-hand left-hand"></div>
+                    </div>
+                    <div class="steve-torso">
+                        <div class="steve-shirt"></div>
+                    </div>
+                    <div class="steve-arm right-arm">
+                        <div class="steve-hand right-hand"></div>
+                    </div>
+                </div>
+                <div class="steve-legs">
+                    <div class="steve-leg left-leg"></div>
+                    <div class="steve-leg right-leg"></div>
+                </div>
+            </div>
+            
+            <!-- Second Steve (Evil Steve) -->
+            <div class="steve evil-steve" id="evil-steve">
+                <div class="steve-head">
+                    <div class="steve-face">
+                        <div class="steve-eye left-eye"></div>
+                        <div class="steve-eye right-eye"></div>
+                        <div class="steve-nose"></div>
+                        <div class="steve-mouth"></div>
+                    </div>
+                    <div class="steve-hair"></div>
+                </div>
+                <div class="steve-body">
+                    <div class="steve-arm left-arm">
+                        <div class="steve-hand left-hand"></div>
+                    </div>
+                    <div class="steve-torso">
+                        <div class="steve-shirt evil-shirt"></div>
+                    </div>
+                    <div class="steve-arm right-arm">
+                        <div class="steve-hand right-hand"></div>
+                    </div>
+                </div>
+                <div class="steve-legs">
+                    <div class="steve-leg left-leg"></div>
+                    <div class="steve-leg right-leg"></div>
+                </div>
+            </div>
+            
+            <!-- Laser Beam -->
+            <div class="laser-beam" id="laser-beam"></div>
+            
+            <!-- Death Animation -->
+            <div class="death-animation" id="death-animation">
+                <div class="death-particle" style="left: 20%; top: 30%; animation-delay: 0s;"></div>
+                <div class="death-particle" style="left: 40%; top: 40%; animation-delay: 0.1s;"></div>
+                <div class="death-particle" style="left: 30%; top: 50%; animation-delay: 0.2s;"></div>
+                <div class="death-particle" style="left: 50%; top: 35%; animation-delay: 0.3s;"></div>
+                <div class="death-particle" style="left: 35%; top: 25%; animation-delay: 0.4s;"></div>
+                <div class="death-particle" style="left: 45%; top: 45%; animation-delay: 0.5s;"></div>
+                <div class="death-particle" style="left: 25%; top: 40%; animation-delay: 0.6s;"></div>
+                <div class="death-particle" style="left: 55%; top: 30%; animation-delay: 0.7s;"></div>
+            </div>
+            
+            <!-- Story Text -->
+            <div class="story-text" id="text-1">Steve explores the world...</div>
+            <div class="story-text" id="text-2">He finds another Steve!</div>
+            <div class="story-text" id="text-3">Offers a friendly handshake...</div>
+            <div class="story-text" id="text-4">But something is wrong...</div>
+            <div class="story-text" id="text-5">BETRAYAL! LASER EYES!</div>
+        </div>
+        
+        <!-- Video Controls -->
+        <div class="video-controls">
+            <div class="control-buttons">
+                <button class="control-btn play-btn" id="play-btn">
+                    <i class="fas fa-play"></i> Play
+                </button>
+                <button class="control-btn pause-btn" id="pause-btn">
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button class="control-btn reset-btn" id="reset-btn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+                <button class="control-btn replay-btn" id="replay-btn">
+                    <i class="fas fa-sync-alt"></i> Replay
+                </button>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <input type="range" min="0" max="100" value="0" class="progress-slider" id="progress-slider">
+            </div>
+            
+            <div class="timer">
+                <span id="current-time">0.0s</span> / <span id="total-time">10.0s</span>
+            </div>
+            
+            <div class="scene-indicators">
+                <div class="scene-dot active" data-time="0">
+                    <div class="tooltip">Start</div>
+                </div>
+                <div class="scene-dot" data-time="2">
+                    <div class="tooltip">Look Around</div>
+                </div>
+                <div class="scene-dot" data-time="4">
+                    <div class="tooltip">Meet Steve</div>
+                </div>
+                <div class="scene-dot" data-time="6">
+                    <div class="tooltip">Handshake</div>
+                </div>
+                <div class="scene-dot" data-time="8">
+                    <div class="tooltip">Betrayal</div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Minecraft Animation | Created with HTML, CSS & JavaScript</p>
+            <p class="minecraft-text">Minecraft is a trademark of Mojang AB</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                  </html>
